@@ -56,10 +56,10 @@ const estimateImpact = (data) => {
     impact.infectionsByRequestedTime,
     0.05
   ));
-  impact.casesForVentilatorsByRequestedTime = doMutiplication(
+  impact.casesForVentilatorsByRequestedTime = Math.trunc(doMutiplication(
     impact.infectionsByRequestedTime,
     0.02
-  );
+  ));
   impact.dollarsInFlight = getDollarsInFlight(
     impact.infectionsByRequestedTime,
     region.avgDailyIncomeInUSD,
@@ -99,10 +99,10 @@ const estimateSevereImpact = (data) => {
     severeImpact.infectionsByRequestedTime,
     0.05
   ));
-  severeImpact.casesForVentilatorsByRequestedTime = doMutiplication(
+  severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(doMutiplication(
     severeImpact.infectionsByRequestedTime,
     0.02
-  );
+  ));
   severeImpact.dollarsInFlight = getDollarsInFlight(
     severeImpact.infectionsByRequestedTime,
     region.avgDailyIncomeInUSD,
