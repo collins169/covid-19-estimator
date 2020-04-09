@@ -52,10 +52,10 @@ const estimateImpact = (data) => {
     impact.severeCasesByRequestedTime
   ));
 
-  impact.casesForICUByRequestedTime = Math.trunc(doMutiplication(
+  impact.casesForICUByRequestedTime = doMutiplication(
     impact.infectionsByRequestedTime,
     0.05
-  ));
+  );
   impact.casesForVentilatorsByRequestedTime = Math.trunc(doMutiplication(
     impact.infectionsByRequestedTime,
     0.02
@@ -95,10 +95,10 @@ const estimateSevereImpact = (data) => {
     severeImpact.severeCasesByRequestedTime
   ));
 
-  severeImpact.casesForICUByRequestedTime = Math.trunc(doMutiplication(
+  severeImpact.casesForICUByRequestedTime = doMutiplication(
     severeImpact.infectionsByRequestedTime,
     0.05
-  ));
+  );
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(doMutiplication(
     severeImpact.infectionsByRequestedTime,
     0.02
