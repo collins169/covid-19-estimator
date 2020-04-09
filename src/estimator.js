@@ -52,20 +52,20 @@ const estimateImpact = (data) => {
     impact.severeCasesByRequestedTime
   ));
 
-  impact.casesForICUByRequestedTime = doMutiplication(
+  impact.casesForICUByRequestedTime = Math.trunc(doMutiplication(
     impact.infectionsByRequestedTime,
     0.05
-  );
-  impact.casesForVentilatorsByRequestedTime = doMutiplication(
+  ));
+  impact.casesForVentilatorsByRequestedTime = Math.trunc(doMutiplication(
     impact.infectionsByRequestedTime,
     0.02
-  );
-  impact.dollarsInFlight = getDollarsInFlight(
+  ));
+  impact.dollarsInFlight = Math.trunc(getDollarsInFlight(
     impact.infectionsByRequestedTime,
     region.avgDailyIncomeInUSD,
     region.avgDailyIncomePopulation,
     getNumberOfDays(periodType, timeToElapse)
-  );
+  ));
 
   return impact;
 };
@@ -95,20 +95,20 @@ const estimateSevereImpact = (data) => {
     severeImpact.severeCasesByRequestedTime
   ));
 
-  severeImpact.casesForICUByRequestedTime = doMutiplication(
+  severeImpact.casesForICUByRequestedTime = Math.trunc(doMutiplication(
     severeImpact.infectionsByRequestedTime,
     0.05
-  );
-  severeImpact.casesForVentilatorsByRequestedTime = doMutiplication(
+  ));
+  severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(doMutiplication(
     severeImpact.infectionsByRequestedTime,
     0.02
-  );
-  severeImpact.dollarsInFlight = getDollarsInFlight(
+  ));
+  severeImpact.dollarsInFlight = Math.trunc(getDollarsInFlight(
     severeImpact.infectionsByRequestedTime,
     region.avgDailyIncomeInUSD,
     region.avgDailyIncomePopulation,
     getNumberOfDays(periodType, timeToElapse)
-  );
+  ));
   return severeImpact;
 };
 
