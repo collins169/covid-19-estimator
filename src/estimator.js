@@ -42,10 +42,10 @@ const estimateImpact = (data) => {
   const infectionRate = Math.trunc(getNumberOfDays(periodType, timeToElapse) / 3);
   impact.infectionsByRequestedTime = impact.currentlyInfected * (2 ** infectionRate);
 
-  impact.severeCasesByRequestedTime = doMutiplication(
+  impact.severeCasesByRequestedTime = Math.trunc(doMutiplication(
     impact.infectionsByRequestedTime,
     0.15
-  );
+  ));
 
   impact.hospitalBedsByRequestedTime = getHospitalSpace(
     totalHospitalBeds,
@@ -85,10 +85,10 @@ const estimateSevereImpact = (data) => {
   const infectionRate = Math.trunc(getNumberOfDays(periodType, timeToElapse) / 3);
   severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * (2 ** infectionRate);
 
-  severeImpact.severeCasesByRequestedTime = doMutiplication(
+  severeImpact.severeCasesByRequestedTime = Math.trunc(doMutiplication(
     severeImpact.infectionsByRequestedTime,
     0.15
-  );
+  ));
 
   severeImpact.hospitalBedsByRequestedTime = getHospitalSpace(
     totalHospitalBeds,
