@@ -60,7 +60,7 @@ const estimateImpact = (data) => {
     impact.infectionsByRequestedTime,
     0.02
   ));
-  impact.dollarsInFlight = getDollarsInFlight(
+  impact.dollarsInFlight = +getDollarsInFlight(
     impact.infectionsByRequestedTime,
     region.avgDailyIncomeInUSD,
     region.avgDailyIncomePopulation,
@@ -103,7 +103,7 @@ const estimateSevereImpact = (data) => {
     severeImpact.infectionsByRequestedTime,
     0.02
   ));
-  severeImpact.dollarsInFlight = getDollarsInFlight(
+  severeImpact.dollarsInFlight = +getDollarsInFlight(
     severeImpact.infectionsByRequestedTime,
     region.avgDailyIncomeInUSD,
     region.avgDailyIncomePopulation,
