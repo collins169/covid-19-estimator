@@ -47,10 +47,10 @@ const estimateImpact = (data) => {
     0.15
   );
 
-  impact.hospitalBedsByRequestedTime = getHospitalSpace(
+  impact.hospitalBedsByRequestedTime = Math.trunc(getHospitalSpace(
     totalHospitalBeds,
     impact.severeCasesByRequestedTime
-  );
+  ));
 
   impact.casesForICUByRequestedTime = doMutiplication(
     impact.infectionsByRequestedTime,
@@ -90,10 +90,10 @@ const estimateSevereImpact = (data) => {
     0.15
   );
 
-  severeImpact.hospitalBedsByRequestedTime = getHospitalSpace(
+  severeImpact.hospitalBedsByRequestedTime = Math.trunc(getHospitalSpace(
     totalHospitalBeds,
     severeImpact.severeCasesByRequestedTime
-  );
+  ));
 
   severeImpact.casesForICUByRequestedTime = doMutiplication(
     severeImpact.infectionsByRequestedTime,
