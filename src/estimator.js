@@ -38,7 +38,7 @@ const estimateImpact = (data) => {
   } = data;
 
   const impact = {};
-  impact.currentlyInfected = Math.trunc(doMutiplication(reportedCases, 10));
+  impact.currentlyInfected = doMutiplication(reportedCases, 10);
   const infectionRate = Math.trunc(getNumberOfDays(periodType, timeToElapse) / 3);
   impact.infectionsByRequestedTime = Math.trunc(impact.currentlyInfected * (2 ** infectionRate));
 
@@ -80,7 +80,7 @@ const estimateSevereImpact = (data) => {
   } = data;
   const severeImpact = {};
 
-  severeImpact.currentlyInfected = Math.trunc(doMutiplication(reportedCases, 50));
+  severeImpact.currentlyInfected = doMutiplication(reportedCases, 50);
 
   const infectionRate = Math.trunc(getNumberOfDays(periodType, timeToElapse) / 3);
   severeImpact.infectionsByRequestedTime = Math.trunc(severeImpact.currentlyInfected * (2 ** infectionRate));
