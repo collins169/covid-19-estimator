@@ -26,7 +26,7 @@ const getDollarsInFlight = (
   dayInc,
   popInc,
   period
-) => infections * dayInc * popInc * period;
+) => (infections * popInc) * dayInc * period;
 
 const estimateImpact = (data) => {
   const {
