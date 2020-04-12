@@ -7,7 +7,7 @@ const convertWeeksToDays = (weeks) => weeks * 7;
 const doMutiplication = (value, param) => value * param;
 
 const getNumberOfDays = (periodType, timeToElapse) => {
-  switch (periodType.toLowerCase()) {
+  switch (periodType) {
     case 'months':
     case 'month':
       return convertMonthsToDays(timeToElapse);
